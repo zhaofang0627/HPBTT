@@ -12,10 +12,10 @@ from ..external.PerceptualSimilarity.models import dist_model
 
 
 class PerceptualLoss(object):
-    def __init__(self, model='net', net='alex', style=False, l1=False, styl2=False, use_gpu=True):
+    def __init__(self, model='net', net='alex', use_gpu=True):
         print('Setting up Perceptual loss..')
         self.model = dist_model.DistModel()
-        self.model.initialize(model=model, net=net, style=style, l1=l1, styl2=styl2, use_gpu=True)
+        self.model.initialize(model=model, net=net, use_gpu=True)
         print('Done')
 
     def __call__(self, pred, target, normalize=True):
