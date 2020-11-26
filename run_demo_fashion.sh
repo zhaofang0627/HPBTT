@@ -5,7 +5,7 @@ INPUT=$3
 
 
 CUDA_VISIBLE_DEVICES=0 python -m cmr_py3.demo_fashion --name ${NAME} --num_train_epoch ${EPOCH} \
-  --img_path ${INPUT} --img_size 256 --notest
+  --img_path ${INPUT}
 
 CUDA_VISIBLE_DEVICES=0 python -m cmr_py3.demo_fashion --name ${NAME} --num_train_epoch ${EPOCH} \
-  --img_path ${INPUT} --img_size 256 --notest --nohmr
+  --img_path ${INPUT} --nohmr
