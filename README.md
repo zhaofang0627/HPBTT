@@ -11,7 +11,7 @@ To install Neural Mesh Renderer and Perceptual loss:
 
 ```
 cd external
-bash install_external.sh
+sh install_external.sh
 ```
 
 ## Demo
