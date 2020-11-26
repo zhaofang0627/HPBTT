@@ -4,8 +4,6 @@ EPOCH=$2
 INPUT=$3
 
 
-CUDA_VISIBLE_DEVICES=0 python -m cmr_py3.demo_market --name ${NAME} --num_train_epoch ${EPOCH} \
-  --img_path ${INPUT}
+python -m HPBTT.demo_market --name ${NAME} --num_train_epoch ${EPOCH} --img_path ${INPUT}
 
-CUDA_VISIBLE_DEVICES=0 python -m cmr_py3.demo_market --name ${NAME} --num_train_epoch ${EPOCH} \
-  --img_path ${INPUT} --nohmr
+python -m HPBTT.demo_market --name ${NAME} --num_train_epoch ${EPOCH} --img_path ${INPUT} --nohmr

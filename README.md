@@ -35,9 +35,7 @@ python -m HPBTT.experiments.train_market --name <model_name>
 To evaluate the model:
 
 ```
-python -m HPBTT.eval_market
-python -m HPBTT.eval_market --name <model_name> --num_train_epoch <epoch_num> --nohmr --img_path <pred_image_path>
-python -m cmr_py3.ssim_score_market <pred_image_path>
+sh ./HPBTT/run_eval_market.sh <model_name> <epoch_num> <output_image_path>
 ```
 
 ## Citation
