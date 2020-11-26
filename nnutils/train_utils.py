@@ -36,7 +36,7 @@ flags.DEFINE_string('checkpoint_dir', osp.join(cache_path, 'snapshots'),
                     'Root directory for output files')
 flags.DEFINE_integer('print_freq', 20, 'scalar logging frequency')
 flags.DEFINE_integer('save_latest_freq', 10000, 'save latest model every x iterations')
-flags.DEFINE_integer('save_epoch_freq', 50, 'save model every k epochs')
+flags.DEFINE_integer('save_epoch_freq', 100, 'save model every k epochs')
 
 ## Flags for visualization
 flags.DEFINE_integer('display_freq', 100, 'visuals logging frequency')
@@ -46,7 +46,7 @@ flags.DEFINE_boolean('plot_scalars', False, 'whether to plot scalars')
 flags.DEFINE_boolean('is_train', True, 'Are we training ?')
 flags.DEFINE_integer('display_id', 1, 'Display Id')
 flags.DEFINE_integer('display_winsize', 256, 'Display Size')
-flags.DEFINE_integer('display_port', 8097, 'Display port')
+flags.DEFINE_integer('display_port', 8087, 'Display port')
 flags.DEFINE_integer('display_single_pane_ncols', 0, 'if positive, display all images in a single visdom web panel with certain number of images per row.')
 
 #-------- tranining class ---------#

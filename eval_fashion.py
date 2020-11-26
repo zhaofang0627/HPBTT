@@ -45,7 +45,6 @@ flags.DEFINE_integer('max_eval_iter', 0,
 
 flags.DEFINE_string('img_path', 'data/im1963.jpg', 'Image to run')
 flags.DEFINE_integer('img_size', 256, 'image size the network was trained on.')
-flags.DEFINE_boolean('test', True, 'if true test.')
 flags.DEFINE_boolean('hmr', True, 'if true do hmr.')
 
 opts = flags.FLAGS

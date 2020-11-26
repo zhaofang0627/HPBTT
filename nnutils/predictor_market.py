@@ -58,12 +58,11 @@ class MeshPredictor(object):
         self.model_flow.eval()
         self.model_flow = self.model_flow.cuda(device=self.opts.gpu_id)
 
-        if not opts.test:
-            self.num_cam = 3
-            self.num_pose = 72
-            self.smpl = SMPL('./cmr/external/hmr/models/neutral_smpl_with_cocoplus_reg.pkl', opts,
-                             obj_saveable=False).cuda(device=opts.gpu_id)
-            self.smpl.eval()
+        self.num_cam = 3
+        self.num_pose = 72
+        self.smpl = SMPL('./cmr/external/hmr/models/neutral_smpl_with_cocoplus_reg.pkl', opts,
+                         obj_saveable=False).cuda(device=opts.gpu_id)
+        self.smpl.eval()
 
         self.renderer = NeuralRendererWOCAM(opts.img_size)
 
