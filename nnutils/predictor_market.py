@@ -139,7 +139,6 @@ class MeshPredictor(object):
             poses = self.theta[:, self.num_cam:(self.num_cam + self.num_pose)]
             shapes = self.theta[:, (self.num_cam + self.num_pose):]  # + self.delta_shape
 
-            print(self.delta_shape)
             scales = self.delta_shape.unsqueeze(1)
             offsets = torch.zeros(self.delta_shape.size(0), 6890, 3).cuda(device=self.opts.gpu_id)
             verts, Js, _ = self.smpl(shapes, poses, scales, offsets, get_skin=True)
