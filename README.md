@@ -38,6 +38,10 @@ To evaluate the model:
 sh ./HPBTT/run_eval_market.sh <model_name> <epoch_num> <output_image_path>
 ```
 
+## Acknowledgement
+
+Our code is based on [cmr](https://github.com/akanazawa/cmr).
+
 ## Citation
 If you use this code for your research, please consider citing:
 ```
