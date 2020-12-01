@@ -16,7 +16,9 @@ sh install_external.sh
 
 ## Demo
 
-To run the demo:
+- Download the [trained model](https://drive.google.com/drive/folders/1hbUqIZIOHtpYAnt3yzS_B_wUrpnWVgQ4?usp=sharing).
+- Extract and put the model in `cachedir/snapshots`
+- Run the demo:
 
 ```
 sh ./HPBTT/run_demo_market.sh <model_name> <epoch_num> <input_image_name>
