@@ -47,7 +47,7 @@ class ShapeTrainer(train_utils_fashion.Trainer):
         # Options
         # ----------
 
-        self.face_labels = pickle.load(open('/raid/fangzhao/cmr/cachedir/market1501/data/face_labels.pkl', 'rb'), encoding='latin1')
+        self.face_labels = pickle.load(open('/raid/fangzhao/HPBTT/cachedir/market1501/data/face_labels.pkl', 'rb'), encoding='latin1')
         region_colors = np.array([[0, 0, 0], [1.0, 0, 0], [1.0, 0, 1.0], [0, 1.0, 0], [1.0, 1.0, 0], [0, 0, 1.0], [0, 1.0, 1.0]])
         # F(13776) x 3
         face_colors = torch.tensor(region_colors[(self.face_labels + 1).astype(np.int)]).type(torch.FloatTensor).cuda()
@@ -55,8 +55,8 @@ class ShapeTrainer(train_utils_fashion.Trainer):
         self.textures_seg = face_colors.unsqueeze(0).repeat(opts.batch_size, 1, 1).unsqueeze(2).repeat(1, 1, opts.tex_size**2, 1).\
             view(opts.batch_size, 13776, opts.tex_size, opts.tex_size, 3).unsqueeze(4).repeat(1, 1, 1, 1, opts.tex_size, 1)
 
-        faces = np.load('/raid/fangzhao/cmr_py3/external/hmr/src/tf_smpl/smpl_faces.npy')
-        self.m = get_body_mesh('/raid/fangzhao/cmr_py3/external/hmr/models/body.obj', trans=np.array([0, 0, 4]),
+        faces = np.load('/raid/fangzhao/HPBTT/external/hmr/src/tf_smpl/smpl_faces.npy')
+        self.m = get_body_mesh('/raid/fangzhao/HPBTT/external/hmr/models/body.obj', trans=np.array([0, 0, 4]),
                                rotation=np.array([np.pi / 2, 0, 0]))
 
         img_size_flow = (opts.img_size, opts.img_size)
@@ -72,7 +72,7 @@ class ShapeTrainer(train_utils_fashion.Trainer):
 
         self.num_cam = 3
         self.num_pose = 72
-        self.smpl = SMPL('/raid/fangzhao/cmr_py3/external/hmr/models/neutral_smpl_with_cocoplus_reg.pkl', opts, obj_saveable=False).cuda()
+        self.smpl = SMPL('/raid/fangzhao/HPBTT/external/hmr/models/neutral_smpl_with_cocoplus_reg.pkl', opts, obj_saveable=False).cuda()
 
         # For renderering.
         print(opts.batch_size)
