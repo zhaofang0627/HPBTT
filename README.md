@@ -29,8 +29,8 @@ sh install_external.sh
 
 ## Demo
 
-- Download the [trained model](https://drive.google.com/drive/folders/1hbUqIZIOHtpYAnt3yzS_B_wUrpnWVgQ4?usp=sharing).
-- Extract and put the model in `cachedir/snapshots`
+- Download the [trained models](https://drive.google.com/drive/folders/1hbUqIZIOHtpYAnt3yzS_B_wUrpnWVgQ4?usp=sharing).
+- Extract and put the models of Market-1501 and DeepFashion in `cachedir/snapshots` and HMR models in `external/hmr`
 - Run the demo:
 
 ```
