@@ -26,7 +26,7 @@ class MeshPredictor(object):
     def __init__(self, opts):
         self.opts = opts
 
-        self.face_labels = pickle.load(open('./HPBTT/external/hmr/models/face_labels.pkl', 'rb'), encoding='latin1')
+        self.face_labels = pickle.load(open('./HPBTT/external/hmr/src/tf_smpl/face_labels.pkl', 'rb'), encoding='latin1')
         region_colors = np.array([[0, 0, 0], [1.0, 0, 0], [1.0, 0, 1.0], [0, 1.0, 0], [1.0, 1.0, 0], [0, 0, 1.0], [0, 1.0, 1.0]])
         region_colors_render = np.array([[0, 0, 0], [238.0/255, 207.0/255, 180.0/255], [1.0, 0, 1.0], [0, 1.0, 0], [1.0, 1.0, 0], [0, 0, 1.0], [0, 1.0, 1.0]])
         # F(13776) x 3

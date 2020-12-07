@@ -27,7 +27,7 @@ class MeshPredictor(object):
     def __init__(self, opts):
         self.opts = opts
 
-        self.face_labels = pickle.load(open('./HPBTT/external/hmr/models/face_labels.pkl', 'rb'), encoding='latin1')
+        self.face_labels = pickle.load(open('./HPBTT/external/hmr/src/tf_smpl/face_labels.pkl', 'rb'), encoding='latin1')
         region_colors = np.array([[0, 0, 0], [1.0, 0, 0], [1.0, 0, 1.0], [0, 1.0, 0], [1.0, 1.0, 0], [0, 0, 1.0], [0, 1.0, 1.0]])
         parsing_colors = np.array([[0, 0, 0], [1.0, 0.8, 0.8], [1.0, 0.6, 1.0], [0.698, 1.0, 0.4], [1.0, 1.0, 0.4], [0.6, 0.8, 1.0], [0.6, 1.0, 1.0]])
         # F(13776) x 3
@@ -133,7 +133,7 @@ class MeshPredictor(object):
         opts = self.opts
 
         with torch.no_grad():
-            self.delta_shape, self.delta_cam, self.pred_class, _ = self.model_scale(self.input_img_crop_batch)
+            self.delta_shape, _, _, _ = self.model_scale(self.input_img_crop_batch)
 
             cams = self.theta[:, :self.num_cam]  # + self.delta_cam
             poses = self.theta[:, self.num_cam:(self.num_cam + self.num_pose)]
