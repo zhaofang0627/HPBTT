@@ -4,8 +4,16 @@ Code for the paper [Human Parsing Based Texture Transfer from Single Image to 3D
 
 ## Requirements
 
+- Cuda 9.2
 - Python 3.6
 - Pytorch 1.4
+- Opencv 3.4.2
+
+Other requirements:
+
+```
+pip install -r requirements.txt
+```
 
 To install Neural Mesh Renderer and Perceptual loss:
 
