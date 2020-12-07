@@ -22,6 +22,11 @@ cd external
 sh install_external.sh
 ```
 
+## Datasets
+
+- [Market-1501](http://zheng-lab.cecs.anu.edu.au/Project/project_reid.html)
+- [DeepFashion (In-shop Clothes Retrieval Benchmark)](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/InShopRetrieval.html)
+
 ## Demo
 
 - Download the [trained model](https://drive.google.com/drive/folders/1hbUqIZIOHtpYAnt3yzS_B_wUrpnWVgQ4?usp=sharing).
