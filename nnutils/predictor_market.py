@@ -27,7 +27,7 @@ class MeshPredictor(object):
     def __init__(self, opts):
         self.opts = opts
 
-        self.face_labels = pickle.load(open('/raid/fangzhao/cmr/cachedir/market1501/data/face_labels.pkl', 'rb'), encoding='latin1')
+        self.face_labels = pickle.load(open('./HPBTT/external/hmr/models/face_labels.pkl', 'rb'), encoding='latin1')
         region_colors = np.array([[0, 0, 0], [1.0, 0, 0], [1.0, 0, 1.0], [0, 1.0, 0], [1.0, 1.0, 0], [0, 0, 1.0], [0, 1.0, 1.0]])
         parsing_colors = np.array([[0, 0, 0], [1.0, 0.8, 0.8], [1.0, 0.6, 1.0], [0.698, 1.0, 0.4], [1.0, 1.0, 0.4], [0.6, 0.8, 1.0], [0.6, 1.0, 1.0]])
         # F(13776) x 3
@@ -41,8 +41,8 @@ class MeshPredictor(object):
             view(opts.batch_size, 13776, opts.tex_size, opts.tex_size, 3).unsqueeze(4).repeat(1, 1, 1, 1, opts.tex_size, 1)
 
         print('Setting up model..')
-        faces = np.load('./cmr/external/hmr/src/tf_smpl/smpl_faces.npy')
-        self.m = get_body_mesh('./cmr/external/hmr/models/body.obj', trans=np.array([0, 0, 4]), rotation=np.array([np.pi / 2, 0, 0]))
+        faces = np.load('./HPBTT/external/hmr/src/tf_smpl/smpl_faces.npy')
+        self.m = get_body_mesh('./HPBTT/external/hmr/models/body.obj', trans=np.array([0, 0, 4]), rotation=np.array([np.pi / 2, 0, 0]))
 
         img_size_scale = (opts.img_size, opts.img_size // 2)
         self.model_scale = mesh_net.MeshScaleNet(img_size_scale, opts, verts=self.m.v, faces=faces, nz_feat=opts.nz_feat, num_classes=751, num_shape_param=1)
@@ -60,7 +60,7 @@ class MeshPredictor(object):
 
         self.num_cam = 3
         self.num_pose = 72
-        self.smpl = SMPL('./cmr/external/hmr/models/neutral_smpl_with_cocoplus_reg.pkl', opts,
+        self.smpl = SMPL('./HPBTT/external/hmr/models/neutral_smpl_with_cocoplus_reg.pkl', opts,
                          obj_saveable=False).cuda(device=opts.gpu_id)
         self.smpl.eval()
 
@@ -157,7 +157,7 @@ class MeshPredictor(object):
 
             self.pred_v = vert_shifted
 
-            pose = np.load('/raid/fangzhao/BlenderRender/pose_standing.npy')
+            pose = np.load('./HPBTT/external/hmr/src/tf_smpl/pose_standing.npy')
             theta = np.concatenate((np.array([np.pi, 0, 0]), pose, np.zeros(10)))
 
             theta_standing = torch.tensor(theta).view(1, -1).repeat(self.delta_shape.size(0), 1).float().cuda(device=self.opts.gpu_id)

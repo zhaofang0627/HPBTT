@@ -1,5 +1,6 @@
 absl-py==0.1.10
 chainer==4.5.0
+chumpy==0.69
 cupy-cuda92==4.2.0
 Cython==0.29.16
 h5py==2.10.0
