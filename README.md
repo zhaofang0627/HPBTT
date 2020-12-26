@@ -44,7 +44,7 @@ sh ./HPBTT/run_demo_market.sh <model_name> <epoch_num> <input_image_name>
 - Generate input images and their SMPL parameters:
 
 ```
-python -m cmr_py3.experiments.hmr_market
+python -m HPBTT.experiments.hmr_market
 ```
 
 - Train the model:

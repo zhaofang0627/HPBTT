@@ -31,7 +31,7 @@ from .get_body_mesh import get_body_mesh
 flags.DEFINE_string('dataset', 'market1501')
 # Weights:
 flags.DEFINE_float('tex_loss_wt', 1., 'weights to tex loss')
-flags.DEFINE_float('tex_ex_loss_wt', .1, 'weights to tex loss')
+flags.DEFINE_float('tex_ex_loss_wt', .1, 'weights to tex ex loss')
 flags.DEFINE_float('tex_dt_loss_wt', .5, 'weights to tex dt loss')
 flags.DEFINE_float('tex_tv_loss_wt', .5, 'weights to tex total variation loss')
 
