@@ -30,9 +30,9 @@ class ShapeTester(object):
         self.hmr = HMR(1)
 
     def test_and_save(self):
-        data_dir = '/raid/fangzhao/dataset/DeepFashion/In-shop_Clothes_Retrieval_Benchmark'
-        out_dir = '/raid/fangzhao/HPBTT/cachedir/deepfashion/data'
-        data_cache_dir = '/raid/fangzhao/HPBTT/cachedir/deepfashion'
+        data_dir = './dataset/DeepFashion/In-shop_Clothes_Retrieval_Benchmark'
+        out_dir = './HPBTT/cachedir/deepfashion/data'
+        data_cache_dir = './HPBTT/cachedir/deepfashion'
 
         with open(osp.join(data_dir, 'anno', 'list_landmarks_inshop.txt'), 'r') as f:
             lines = f.readlines()

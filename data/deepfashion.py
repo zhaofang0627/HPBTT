@@ -10,7 +10,7 @@ from . import base_fashion as base_data
 
 # -------------- flags ------------- #
 # ---------------------------------- #
-kData = '/raid/fangzhao/HPBTT/cachedir/deepfashion/data'
+kData = './HPBTT/cachedir/deepfashion/data'
     
 flags.DEFINE_string('data_dir', kData, 'Deepfashion Data Directory')
 flags.DEFINE_integer('img_size', 256, 'image size')
@@ -34,7 +34,7 @@ class Deepfashion(base_data.BaseDataset):
         self.data_dir = opts.data_dir
         self.data_cache_dir = opts.data_cache_dir
 
-        self.ori_img_dir = osp.join('/raid/fangzhao/dataset/DeepFashion/In-shop_Clothes_Retrieval_Benchmark', 'img')
+        self.ori_img_dir = osp.join('./dataset/DeepFashion/In-shop_Clothes_Retrieval_Benchmark', 'img')
         self.theta_dir = osp.join(self.data_dir, 'theta')
         self.mask_ori_dir = osp.join(self.data_dir, 'seg')
 

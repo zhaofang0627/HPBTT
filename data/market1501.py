@@ -11,7 +11,7 @@ from . import base as base_data
 
 # -------------- flags ------------- #
 # ---------------------------------- #
-kData = '/raid/fangzhao/HPBTT/cachedir/market1501/data'
+kData = './HPBTT/cachedir/market1501/data'
     
 flags.DEFINE_string('data_dir', kData, 'Market1501 Data Directory')
 flags.DEFINE_integer('img_size', 256, 'image size')

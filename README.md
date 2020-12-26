@@ -18,7 +18,7 @@ pip install -r requirements.txt
 To install Neural Mesh Renderer and Perceptual loss:
 
 ```
-cd external
+cd ./HPBTT/external
 sh install_external.sh
 ```
 
@@ -29,8 +29,8 @@ sh install_external.sh
 
 ## Demo
 
-- Download the [trained models](https://drive.google.com/drive/folders/1hbUqIZIOHtpYAnt3yzS_B_wUrpnWVgQ4?usp=sharing).
-- Extract and put the models of Market-1501 and DeepFashion in `cachedir/snapshots` and HMR models in `external/hmr`
+- Download the [trained models](https://drive.google.com/drive/folders/1zTxalRr6RnJ-lK3_u2JB23ejF1yBK1Ao?usp=sharing).
+- Extract and put the models of Market-1501 and DeepFashion in `./HPBTT/cachedir/snapshots` and HMR models in `./HPBTT/external/hmr`
 - Run the demo:
 
 ```
@@ -39,7 +39,15 @@ sh ./HPBTT/run_demo_market.sh <model_name> <epoch_num> <input_image_name>
 
 ## Training
 
-To train the model:
+- Download the [Market-1501 dataset](https://drive.google.com/file/d/1HGRDRrYr0nLhQzQmAFc2Odws_bn3q9Jo/view?usp=sharing).
+- Extract and put the dataset in `./dataset`
+- Generate input images and their SMPL parameters:
+
+```
+python -m cmr_py3.experiments.hmr_market
+```
+
+- Train the model:
 
 ```
 python -m HPBTT.experiments.train_market --name <model_name>

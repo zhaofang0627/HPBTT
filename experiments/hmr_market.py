@@ -32,8 +32,8 @@ class ShapeTester(object):
         self.hmr = HMR(1)
 
     def test_and_save(self):
-        data_dir = '/raid/fangzhao/dataset/market1501-pose'
-        out_dir = '/raid/fangzhao/HPBTT/cachedir/market1501/data'
+        data_dir = './dataset/market1501'
+        out_dir = './HPBTT/cachedir/market1501/data'
         img_dir = osp.join(data_dir, 'images')
         data_cache_dir = osp.join(cache_path, 'market1501')
         anno_path = osp.join(data_cache_dir, 'data', '%s_market1501.mat' % 'train')
