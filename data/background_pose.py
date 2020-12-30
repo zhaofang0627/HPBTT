@@ -11,7 +11,7 @@ from ..external.hmr.src.util import image as img_util
 
 import tqdm
 
-bgData = '/raid/fangzhao/dataset/PRW-v16.04.20/frames'
+bgData = './dataset/PRW-v16.04.20/frames'
 flags.DEFINE_string('PRW_img_path', bgData, 'Background Data Directory')
 
 

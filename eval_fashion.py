@@ -80,7 +80,7 @@ def main(_):
             img_crop_list = []
             theta_list = []
             for j in range(len(b)):
-                img_crop_path = osp.join('/raid/fangzhao/dataset/DeepFashion/In-shop_Clothes_Retrieval_Benchmark', 'img', b[j].split('.')[0] + '.jpg')
+                img_crop_path = osp.join('./dataset/DeepFashion/In-shop_Clothes_Retrieval_Benchmark', 'img', b[j].split('.')[0] + '.jpg')
                 img_crop = cv2.imread(img_crop_path)
                 img_crop = img_crop[..., ::-1]
                 img_crop_list.append(np.expand_dims(img_crop, 0))
@@ -95,7 +95,7 @@ def main(_):
                      'img_crop': img_crop_batch,
                      'img_info': b}
 
-            with open('/raid/fangzhao/HPBTT/cachedir/deepfashion/data/batch_hmr_q/batch_hmr_%d.pkl' % i, 'wb') as f:
+            with open('./HPBTT/cachedir/deepfashion/data/batch_hmr_q/batch_hmr_%d.pkl' % i, 'wb') as f:
                 pickle.dump(batch, f)
 
     else:
@@ -103,7 +103,7 @@ def main(_):
 
         predictor = pred_util.MeshPredictor(opts)
 
-        batch_root = '/raid/fangzhao/HPBTT/cachedir/deepfashion/data/batch_hmr_q'
+        batch_root = './HPBTT/cachedir/deepfashion/data/batch_hmr_q'
 
         if not os.path.exists(opts.img_path):
             os.mkdir(opts.img_path)

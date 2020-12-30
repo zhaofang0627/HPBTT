@@ -64,7 +64,7 @@ def main(_):
     if opts.hmr:
         from .external.hmr.hmr import HMR
 
-        img_data = pickle.load(open('/raid/fangzhao/dataset/img_data_market1501.pkl', 'rb'))
+        img_data = pickle.load(open('./HPBTT/cachedir/market1501/data/img_data_market1501.pkl', 'rb'))
         g_id = list(img_data['query'].keys())
         g_pids = []
         g_camids = []
@@ -101,15 +101,15 @@ def main(_):
                      'img_crop': img_crop,
                      'img_info': b}
 
-            with open('/raid/fangzhao/cmr_py3/cachedir/market1501/data/batch_hmr_q/batch_hmr_%d.pkl' % i, 'wb') as f:
+            with open('./HPBTT/cachedir/market1501/data/batch_hmr_q/batch_hmr_%d.pkl' % i, 'wb') as f:
                 pickle.dump(batch, f)
     else:
         from .nnutils import predictor_market as pred_util
 
         predictor = pred_util.MeshPredictor(opts)
 
-        batch_root = '/raid/fangzhao/cmr_py3/cachedir/market1501/data/batch_hmr_q'
-        bg_data_path = '/raid/fangzhao/dataset/PRW-v16.04.20/frames'
+        batch_root = './HPBTT/cachedir/market1501/data/batch_hmr_q'
+        bg_data_path = './dataset/PRW-v16.04.20/frames'
         bg_data_list = []
 
         img_size = (128, 64)

@@ -39,8 +39,8 @@ sh ./HPBTT/run_demo_market.sh <model_name> <epoch_num> <input_image_name>
 
 ## Training
 
-- Download the [Market-1501 dataset](https://drive.google.com/file/d/1HGRDRrYr0nLhQzQmAFc2Odws_bn3q9Jo/view?usp=sharing).
-- Extract and put the dataset in `./dataset`
+- Download the [Market-1501 dataset](https://drive.google.com/file/d/1HGRDRrYr0nLhQzQmAFc2Odws_bn3q9Jo/view?usp=sharing) and [PRW dataset](https://github.com/liangzheng06/PRW-baseline) for background.
+- Extract and put the datasets in `./dataset`
 - Generate input images and their SMPL parameters:
 
 ```
