@@ -37,6 +37,7 @@ flags.DEFINE_string('checkpoint_dir', osp.join(cache_path, 'snapshots'),
 flags.DEFINE_integer('print_freq', 20, 'scalar logging frequency')
 flags.DEFINE_integer('save_latest_freq', 10000, 'save latest model every x iterations')
 flags.DEFINE_integer('save_epoch_freq', 100, 'save model every k epochs')
+flags.DEFINE_string('scale_model', './HPBTT/cachedir/snapshots/model_market/scale_net_1000.pth', 'Model for the mesh scale net')
 
 ## Flags for visualization
 flags.DEFINE_integer('display_freq', 100, 'visuals logging frequency')

@@ -61,12 +61,13 @@ class ShapeTrainer(train_utils.Trainer):
 
         img_size_scale = (opts.img_size, opts.img_size // 2)
         self.model_scale = mesh_net.MeshScaleNet(img_size_scale, opts, verts=self.m.v, faces=faces, nz_feat=opts.nz_feat, num_classes=751, num_shape_param=1)
+        self.model_scale.load_state_dict(torch.load(opts.scale_model))
+        self.model_scale.eval()
 
         img_size_flow = (opts.img_size, opts.img_size)
         self.model_flow = mesh_net.MeshMP3FlowPoseNet(img_size_flow, opts, verts=self.m.v, faces=faces, nz_feat=opts.nz_feat, n_upconv=6, nc_init=128, predict_flow=True)
 
         if opts.num_pretrain_epochs > 0:
-            self.load_network(self.model_scale, 'scale', opts.num_pretrain_epochs)
             self.load_network(self.model_flow, 'flow', opts.num_pretrain_epochs)
 
         self.model_scale = self.model_scale.cuda()
